@@ -1,0 +1,15 @@
+.blockEqual:not(.default) {
+  height: auto;
+}
+
+.numEqual {
+  width: 232px;
+  height: 64px;
+  border: 1px solid var(--border-color);
+  background-color: var(--iris-color);
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  color: var(--font-inverse-color);
+}

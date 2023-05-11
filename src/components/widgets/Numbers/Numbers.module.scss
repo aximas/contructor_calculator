@@ -1,0 +1,22 @@
+.blockNumbers:not(.default) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 224px;
+
+  * {
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+.num1 {
+  flex: 1 1 30%;
+  height: 48px
+}
+
+.num2 {
+  flex: 6 1 60%;
+}

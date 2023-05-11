@@ -1,0 +1,74 @@
+:root {
+  --iris-color: rgba(93, 95, 239, 1);
+
+  --font-main-color: rgba(0, 0, 0, 1);
+  --font-dark-color: rgba(17, 24, 39, 1);
+  --font-inverse-color: rgba(255, 255, 255, 1);
+
+  --font-gray-color: rgba(77, 85, 98, 1);
+  --font-smoke-color: rgba(107, 114, 128, 1);
+
+  --border-color: rgba(226, 227, 229, 1);
+  --border-dashed-color: rgba(196, 196, 196, 1);
+
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--font-main-color);
+  background-color: var(--background-main-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+button {
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: transparent;
+  color: var(--font-main-color);
+}
+
+button:hover {
+  border-color: var(--iris-color);
+}
+
+button:focus,
+button:focus-visible {
+  border-color: var(--iris-color);
+  outline: none;
+}
+
+p {
+  margin: 0
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

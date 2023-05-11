@@ -1,0 +1,13 @@
+.numDisplay {
+  min-width: 232px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--background-block-color);
+  padding: 4px 8px;
+
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+}

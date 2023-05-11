@@ -1,13 +1,18 @@
+import { WidgetProps } from '../Widgets.types';
 import cn from 'classnames';
 import styles from './Methods.module.scss';
-import { ARITHMETIC_METHODS } from '../../../core/constants';
-import React from 'react';
-import { WidgetProps } from '../Widgets.types';
 import widgetsStyles from '../Widgets.module.scss';
+import { CLEAR } from '../../../core/constants';
+import React from 'react';
+import parse from 'html-react-parser';
 import { useAppDispatch } from '../../../core/utils/hooks/reduxHooks';
-import { addMethod } from '../../../core/store/task/task.slice';
+import {
+   addDigit,
+   addOperations,
+   addResult
+} from '../../../core/store/task/task.slice';
 
-export const Methods = ({
+export const Clear = ({
    isDraggable = true,
    isOnBoard = false
 }: WidgetProps) => {
@@ -17,9 +22,14 @@ export const Methods = ({
       e.dataTransfer?.setData('widgetType', name);
    };
 
-   const handleOnClick = (method) => () => {
-      if (method === 'x') return dispatch(addMethod('*'));
-      dispatch(addMethod(method));
+   const handleClick = (type: string) => () => {
+      if (type === 'clear') {
+         dispatch(addDigit(''));
+         dispatch(addOperations(''));
+         dispatch(addResult(''));
+      } else {
+         dispatch(addDigit(type));
+      }
    };
 
    return (
@@ -28,16 +38,16 @@ export const Methods = ({
             [widgetsStyles.notActive]: isOnBoard
          })}
          draggable={isDraggable}
-         onDragStart={(e) => handleOnDrag('Methods')(e)}
+         onDragStart={(e) => handleOnDrag('Clear')(e)}
       >
-         {ARITHMETIC_METHODS.map((m, i) => {
+         {CLEAR.map((m, i) => {
             return (
                <button
                   key={i}
                   className={styles.numMethod}
-                  onClick={handleOnClick(m)}
+                  onClick={handleClick(m.value)}
                >
-                  {m}
+                  {parse(m.text)}
                </button>
             );
          })}

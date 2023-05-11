@@ -3,13 +3,13 @@
   flex-wrap: wrap;
   gap: 8px;
   height: 224px;
+}
 
-  * {
-    border: 1px solid var(--border-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 15px;
-  }
+.numBtn {
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
 }
 
 .num1 {

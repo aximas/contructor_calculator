@@ -10,3 +10,4 @@ export const NUMBERS = [{ value: 7, col: 1 }, { value: 8, col: 1 }, { value: 9, 
     col: 2
 }, { value: ',', col: 1 }];
 export const TABS = [{ text: 'Runtime', icon: Eye }, { text: 'Constructor', icon: Selector }];
+export const CLEAR = [{text: 'C', value: 'clear'}, {text: '&#8592;', value: 'backspace'}]
